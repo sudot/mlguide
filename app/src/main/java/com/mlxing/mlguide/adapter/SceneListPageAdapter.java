@@ -1,7 +1,6 @@
 package com.mlxing.mlguide.adapter;
 
 import android.content.Context;
-
 import com.mlxing.mlguide.R;
 import com.mlxing.mlguide.adapter.base.ViewHolder;
 import com.mlxing.mlguide.adapter.base.recyclerview.LoadMoreCommonAdapter;

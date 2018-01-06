@@ -2,13 +2,11 @@ package com.mlxing.mlguide.application;
 
 import android.app.Application;
 import android.content.Context;
-
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.log.LoggerInterceptor;
+import okhttp3.OkHttpClient;
 
 import java.util.concurrent.TimeUnit;
-
-import okhttp3.OkHttpClient;
 
 /**
  * Created by quan on 2016/6/17.

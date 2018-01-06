@@ -145,7 +145,7 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
             outRect.set(0, 0, 0, mDividerHeight);
         } else {
             //mDivider.getIntrinsicWidth()
-            outRect.set(0, 0,  mDividerHeight, 0);
+            outRect.set(0, 0, mDividerHeight, 0);
         }
     }
 }

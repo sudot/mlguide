@@ -2,11 +2,10 @@ package com.mlxing.mlguide.api.base;
 
 import com.alibaba.fastjson.JSON;
 import com.zhy.http.okhttp.callback.Callback;
+import okhttp3.Response;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
-
-import okhttp3.Response;
 
 /**
  * http请求接收的数据转换成指定对象

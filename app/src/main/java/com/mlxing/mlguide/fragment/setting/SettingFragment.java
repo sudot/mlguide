@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
-
 import com.mlxing.mlguide.R;
 import com.mlxing.mlguide.utils.PreferencesUtils;
 
@@ -37,7 +36,7 @@ public class SettingFragment extends PreferenceFragment {
             @Override
             public boolean onPreferenceChange(Preference preference, Object newValue) {
                 boolean checked = Boolean.valueOf(newValue.toString());
-                PreferencesUtils.putBoolean(getActivity(),PRE_SAVE_NET_MODE,checked);
+                PreferencesUtils.putBoolean(getActivity(), PRE_SAVE_NET_MODE, checked);
                 return true;
             }
         });

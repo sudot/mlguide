@@ -4,13 +4,11 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import com.mlxing.mlguide.R;
 import com.mlxing.mlguide.activity.BaseActivity;
 import com.mlxing.mlguide.fragment.setting.SettingFragment;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * Created by quan on 2016/6/21.

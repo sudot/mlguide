@@ -5,16 +5,14 @@ import com.mlxing.mlguide.api.base.BeanCallBack;
 import com.mlxing.mlguide.api.base.ClientJsonResp;
 import com.mlxing.mlguide.entity.Scene;
 import com.zhy.http.okhttp.OkHttpUtils;
-
+import okhttp3.Call;
+import okhttp3.OkHttpClient;
 import org.junit.Test;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import okhttp3.Call;
-import okhttp3.OkHttpClient;
-
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
  * To work on unit tests, switch the Test Artifact in the Build Variants view.
@@ -28,7 +26,7 @@ public class ExampleUnitTest {
                 .readTimeout(10000L, TimeUnit.MILLISECONDS)
                 .build();
         OkHttpUtils.initClient(okHttpClient);
-        ScenicService.loadData("广州",null,null,1,10).execute(new BeanCallBack<ClientJsonResp<List<Scene>>>() {
+        ScenicService.loadData("广州", null, null, 1, 10).execute(new BeanCallBack<ClientJsonResp<List<Scene>>>() {
 
             @Override
             public void onError(Call call, Exception e, int id) {

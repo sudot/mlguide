@@ -1,10 +1,7 @@
 package com.mlxing.mlguide.api;
 
-import android.util.Log;
-
 import com.mlxing.mlguide.api.base.BaseService;
 import com.mlxing.mlguide.api.common.ParamUtil;
-import com.zhy.http.okhttp.callback.Callback;
 import com.zhy.http.okhttp.request.RequestCall;
 
 /**
@@ -14,6 +11,7 @@ public class ScenicService extends BaseService {
 
     /**
      * 根据条件读取数据
+     *
      * @param cityName
      * @param name
      * @param scenicThemeId
@@ -28,7 +26,7 @@ public class ScenicService extends BaseService {
                 .addParam("pageSize", pageSize.toString())
                 .addParam("cityName", cityName)
                 .addParam("name", name)
-                .addParam("themeId",scenicThemeId == null ? null : scenicThemeId.toString());
-        return post(url,paramUtil);
+                .addParam("themeId", scenicThemeId == null ? null : scenicThemeId.toString());
+        return post(url, paramUtil);
     }
 }

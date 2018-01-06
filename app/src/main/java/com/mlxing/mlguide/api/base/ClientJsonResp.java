@@ -2,114 +2,113 @@ package com.mlxing.mlguide.api.base;
 
 /**
  * 客户端接收api接口返回的数据转换载体
- * 
- * @author quan
- * 
+ *
  * @param <T>
+ * @author quan
  */
 public class ClientJsonResp<T> {
 
-	private int code;
+    private int code;
 
-	private String msg;
+    private String msg;
 
-	private String msgDetail;
+    private String msgDetail;
 
-	private T response;
+    private T response;
 
-	private String token;
+    private String token;
 
-	private Integer pageNo;
+    private Integer pageNo;
 
-	private Integer pageSize;
+    private Integer pageSize;
 
-	private Integer pageCount;
+    private Integer pageCount;
 
-	private Integer rowCount;
+    private Integer rowCount;
 
-	private Integer totalCount;
+    private Integer totalCount;
 
-	public ClientJsonResp() {
+    public ClientJsonResp() {
 
-	}
+    }
 
-	public int getCode() {
-		return code;
-	}
+    public int getCode() {
+        return code;
+    }
 
-	public void setCode(int code) {
-		this.code = code;
-	}
+    public void setCode(int code) {
+        this.code = code;
+    }
 
-	public String getMsg() {
-		return msg;
-	}
+    public String getMsg() {
+        return msg;
+    }
 
-	public void setMsg(String msg) {
-		this.msg = msg;
-	}
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 
-	public T getResponse() {
-		return response;
-	}
+    public T getResponse() {
+        return response;
+    }
 
-	public void setResponse(T response) {
-		this.response = response;
-	}
+    public void setResponse(T response) {
+        this.response = response;
+    }
 
-	public String getToken() {
-		return token;
-	}
+    public String getToken() {
+        return token;
+    }
 
-	public void setToken(String token) {
-		this.token = token;
-	}
+    public void setToken(String token) {
+        this.token = token;
+    }
 
-	public Integer getPageNo() {
-		return pageNo;
-	}
+    public Integer getPageNo() {
+        return pageNo;
+    }
 
-	public void setPageNo(Integer pageNo) {
-		this.pageNo = pageNo;
-	}
+    public void setPageNo(Integer pageNo) {
+        this.pageNo = pageNo;
+    }
 
-	public Integer getPageSize() {
-		return pageSize;
-	}
+    public Integer getPageSize() {
+        return pageSize;
+    }
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
+    public void setPageSize(Integer pageSize) {
+        this.pageSize = pageSize;
+    }
 
-	public Integer getPageCount() {
-		return pageCount;
-	}
+    public Integer getPageCount() {
+        return pageCount;
+    }
 
-	public void setPageCount(Integer pageCount) {
-		this.pageCount = pageCount;
-	}
+    public void setPageCount(Integer pageCount) {
+        this.pageCount = pageCount;
+    }
 
-	public Integer getRowCount() {
-		return rowCount;
-	}
+    public Integer getRowCount() {
+        return rowCount;
+    }
 
-	public void setRowCount(Integer rowCount) {
-		this.rowCount = rowCount;
-	}
+    public void setRowCount(Integer rowCount) {
+        this.rowCount = rowCount;
+    }
 
-	public Integer getTotalCount() {
-		return totalCount;
-	}
+    public Integer getTotalCount() {
+        return totalCount;
+    }
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
+    public void setTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+    }
 
-	public String getMsgDetail() {
-		return msgDetail;
-	}
+    public String getMsgDetail() {
+        return msgDetail;
+    }
 
-	public void setMsgDetail(String msgDetail) {
-		this.msgDetail = msgDetail;
-	}
+    public void setMsgDetail(String msgDetail) {
+        this.msgDetail = msgDetail;
+    }
 }

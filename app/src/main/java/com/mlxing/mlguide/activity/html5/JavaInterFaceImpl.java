@@ -2,7 +2,6 @@ package com.mlxing.mlguide.activity.html5;
 
 import android.content.Context;
 import android.webkit.JavascriptInterface;
-
 import com.mlxing.mlguide.utils.UIHelp;
 
 /**
@@ -14,13 +13,13 @@ public class JavaInterFaceImpl {
     private Context context;
     private String TAG;
 
-    public JavaInterFaceImpl(Context context){
+    public JavaInterFaceImpl(Context context) {
         this.context = context;
         this.TAG = this.getClass().getSimpleName();
     }
 
     @JavascriptInterface
-    public void showProduct(String productId){
+    public void showProduct(String productId) {
         UIHelp.toastMessage(productId);
     }
 

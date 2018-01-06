@@ -10,15 +10,14 @@ import java.util.Set;
 
 /**
  * 前端参数处理 3DES算法
- * 
+ *
  * @author xieat
- * 
  */
 public class TripleDESClientParamUtil {
 
     /**
      * 加密接口传�?参数
-     * 
+     *
      * @param map
      * @return
      * @throws Exception
@@ -62,7 +61,7 @@ public class TripleDESClientParamUtil {
 
     /**
      * 解密接口传�?传输
-     * 
+     *
      * @param data
      * @return
      * @throws Exception
@@ -74,7 +73,7 @@ public class TripleDESClientParamUtil {
         // data = mdn=""&pwd=""&timestamp=""
         String[] strArr = d.split("&");
         if (strArr != null && strArr.length > 0) {
-            for (String str: strArr) {
+            for (String str : strArr) {
                 String[] paramArr = str.split("=");
                 if (paramArr.length == 2) {
                     map.put(paramArr[0], StringUtil.stringValue(paramArr[1], ""));
@@ -97,7 +96,7 @@ public class TripleDESClientParamUtil {
         // data = mdn=""&pwd=""&timestamp=""
         String[] strArr = d.split("&");
         if (strArr != null && strArr.length > 0) {
-            for (String str: strArr) {
+            for (String str : strArr) {
                 String[] paramArr = str.split("=");
                 if (paramArr.length == 2) {
                     map.put(paramArr[0], StringUtil.stringValue(paramArr[1], ""));

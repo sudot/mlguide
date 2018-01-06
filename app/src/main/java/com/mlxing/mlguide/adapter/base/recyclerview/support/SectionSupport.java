@@ -3,8 +3,7 @@ package com.mlxing.mlguide.adapter.base.recyclerview.support;
 /**
  * Created by zhy on 16/4/9.
  */
-public interface SectionSupport<T>
-{
+public interface SectionSupport<T> {
     public int sectionHeaderLayoutId();
 
     public int sectionTitleTextViewId();

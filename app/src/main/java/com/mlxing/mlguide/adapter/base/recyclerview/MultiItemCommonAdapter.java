@@ -2,19 +2,16 @@ package com.mlxing.mlguide.adapter.base.recyclerview;
 
 import android.content.Context;
 import android.view.ViewGroup;
-
 import com.mlxing.mlguide.adapter.base.ViewHolder;
 
 import java.util.List;
 
-public abstract class MultiItemCommonAdapter<T> extends CommonAdapter<T>
-{
+public abstract class MultiItemCommonAdapter<T> extends CommonAdapter<T> {
 
     protected MultiItemTypeSupport<T> mMultiItemTypeSupport;
 
     public MultiItemCommonAdapter(Context context, List<T> datas,
-                                  MultiItemTypeSupport<T> multiItemTypeSupport)
-    {
+                                  MultiItemTypeSupport<T> multiItemTypeSupport) {
         super(context, -1, datas);
         mMultiItemTypeSupport = multiItemTypeSupport;
 
@@ -23,16 +20,14 @@ public abstract class MultiItemCommonAdapter<T> extends CommonAdapter<T>
     }
 
     @Override
-    public int getItemViewType(int position)
-    {
+    public int getItemViewType(int position) {
         if (mMultiItemTypeSupport != null)
             return mMultiItemTypeSupport.getItemViewType(position, mDatas.get(position));
         return super.getItemViewType(position);
     }
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
-    {
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         if (mMultiItemTypeSupport == null) return super.onCreateViewHolder(parent, viewType);
 
         int layoutId = mMultiItemTypeSupport.getLayoutId(viewType);

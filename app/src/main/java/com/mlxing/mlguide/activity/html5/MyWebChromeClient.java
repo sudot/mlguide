@@ -17,7 +17,7 @@ public class MyWebChromeClient extends WebChromeClient {
 
     private TextView titleView;
 
-    public MyWebChromeClient(TextView titleView,ProgressBar progressView){
+    public MyWebChromeClient(TextView titleView, ProgressBar progressView) {
         this.titleView = titleView;
         this.progressView = progressView;
     }

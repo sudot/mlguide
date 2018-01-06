@@ -15,14 +15,12 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import com.mlxing.mlguide.R;
 import com.mlxing.mlguide.activity.BaseActivity;
 import com.mlxing.mlguide.utils.NetWorkUtils;
 import com.mlxing.mlguide.utils.PreferencesUtils;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * Created by quan on 2016/6/18.
@@ -54,7 +52,7 @@ public class WebViewActivity extends BaseActivity {
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_keyboard_backspace_white);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener(){
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
@@ -207,7 +205,7 @@ public class WebViewActivity extends BaseActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        switch (id){
+        switch (id) {
             case R.id.action_refresh:
                 mWebView.loadUrl(ad_url);
                 return true;
@@ -216,15 +214,16 @@ public class WebViewActivity extends BaseActivity {
                 return true;
             case R.id.action_collect:
                 String m_key = "hsCollect_key";
-                int _resId = PreferencesUtils.getInt(this,m_key);
-                if(_resId == -1 || _resId == R.drawable.ic_grade_white){
+                int _resId = PreferencesUtils.getInt(this, m_key);
+                if (_resId == -1 || _resId == R.drawable.ic_grade_white) {
                     item.setIcon(R.drawable.ic_grade_red);
-                }else{
+                } else {
                     item.setIcon(R.drawable.ic_grade_white);
-                    PreferencesUtils.putInt(this,m_key,R.drawable.ic_grade_white);
+                    PreferencesUtils.putInt(this, m_key, R.drawable.ic_grade_white);
                 }
                 return true;
-            default:break;
+            default:
+                break;
         }
 
         return super.onOptionsItemSelected(item);

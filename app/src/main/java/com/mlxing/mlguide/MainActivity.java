@@ -11,7 +11,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
-
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import com.lhh.apst.library.AdvancedPagerSlidingTabStrip;
 import com.mlxing.mlguide.activity.BaseActivity;
 import com.mlxing.mlguide.activity.setting.SettingActivity;
@@ -20,11 +21,8 @@ import com.mlxing.mlguide.fragment.main.PageChangeImpl;
 import com.mlxing.mlguide.utils.UIHelp;
 import com.mlxing.mlguide.widget.APSTSViewPager;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
 public class MainActivity extends BaseActivity
-        implements NavigationView.OnNavigationItemSelectedListener{
+        implements NavigationView.OnNavigationItemSelectedListener {
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
@@ -57,13 +55,13 @@ public class MainActivity extends BaseActivity
         init();
     }
 
-    private void findViews(){
-        mAPSTS = (AdvancedPagerSlidingTabStrip)findViewById(R.id.tabs);
-        mVP = (APSTSViewPager)findViewById(R.id.vp_main);
-        mIvCenterBtn = (ImageView)findViewById(R.id.ivCenterBtn);
+    private void findViews() {
+        mAPSTS = (AdvancedPagerSlidingTabStrip) findViewById(R.id.tabs);
+        mVP = (APSTSViewPager) findViewById(R.id.vp_main);
+        mIvCenterBtn = (ImageView) findViewById(R.id.ivCenterBtn);
     }
 
-    private void init(){
+    private void init() {
         mIvCenterBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,7 +71,7 @@ public class MainActivity extends BaseActivity
         int mSize = getResources().getDimensionPixelSize(R.dimen.weibo_tab_size);
         mVP.setOffscreenPageLimit(FragmentAdapter.VIEW_SIZE);
         FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentAdapter adapter = new FragmentAdapter(this,fragmentManager,mSize);
+        FragmentAdapter adapter = new FragmentAdapter(this, fragmentManager, mSize);
 
         mVP.setAdapter(adapter);
 
@@ -81,7 +79,7 @@ public class MainActivity extends BaseActivity
         mAPSTS.setViewPager(mVP);
         mAPSTS.setOnPageChangeListener(new PageChangeImpl(adapter));
         mVP.setCurrentItem(FragmentAdapter.VIEW_FIRST);
-        mAPSTS.showDot(FragmentAdapter.VIEW_SECOND,"99+");
+        mAPSTS.showDot(FragmentAdapter.VIEW_SECOND, "99+");
     }
 
 
@@ -115,13 +113,14 @@ public class MainActivity extends BaseActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        switch (id){
+        switch (id) {
             case R.id.action_search:
                 UIHelp.toastMessage("搜索");
                 return true;
             case R.id.action_home:
                 return true;
-            default:break;
+            default:
+                break;
         }
 
         return super.onOptionsItemSelected(item);
@@ -145,7 +144,7 @@ public class MainActivity extends BaseActivity
 
         } else if (id == R.id.nav_send) {
 
-        }else if(id == R.id.nav_setting){
+        } else if (id == R.id.nav_setting) {
             goTo(SettingActivity.class);
         }
         drawer.closeDrawer(GravityCompat.START);

@@ -11,7 +11,6 @@ import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
-
 import com.mlxing.mlguide.application.AppApplication;
 
 import java.util.ArrayList;
@@ -20,13 +19,13 @@ import java.util.List;
 /**
  * Created by quan on 2016/6/19.
  */
-public class MyWebViewClient  extends WebViewClient {
+public class MyWebViewClient extends WebViewClient {
 
     private Context context;
     private String filterUrlHeader;
     private ProgressBar progressView;
 
-    public MyWebViewClient(Context context , ProgressBar progressView,String filterUrlHeader){
+    public MyWebViewClient(Context context, ProgressBar progressView, String filterUrlHeader) {
         this.context = context;
         this.filterUrlHeader = filterUrlHeader;
         this.progressView = progressView;

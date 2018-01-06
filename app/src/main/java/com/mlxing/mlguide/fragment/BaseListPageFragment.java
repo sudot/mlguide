@@ -30,7 +30,7 @@ public abstract class BaseListPageFragment<T> extends BaseListFragment<T> {
                     }
                     if (!isLoading) {
                         isLoading = true;
-                        if(mPageNo < mPageCount){
+                        if (mPageNo < mPageCount) {
                             mPageNo++;
                             adapter.prevLoadMoreData();
                             loadData();

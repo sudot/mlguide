@@ -9,19 +9,17 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import com.mlxing.mlguide.R;
 import com.mlxing.mlguide.adapter.base.recyclerview.CommonAdapter;
 import com.mlxing.mlguide.adapter.base.recyclerview.DividerItemDecoration;
 import com.mlxing.mlguide.adapter.base.recyclerview.OnItemClickListener;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
 /**
  * Created by quan on 2016/6/20.
  */
-public abstract class BaseListFragment<T> extends BaseFragment implements SwipeRefreshLayout.OnRefreshListener,OnItemClickListener {
+public abstract class BaseListFragment<T> extends BaseFragment implements SwipeRefreshLayout.OnRefreshListener, OnItemClickListener {
 
     @BindView(R.id.list)
     protected RecyclerView mRecyclerView;
@@ -32,12 +30,13 @@ public abstract class BaseListFragment<T> extends BaseFragment implements SwipeR
 
     protected CommonAdapter<T> adapter;
 
-    public int mPageNo = 1,mPageSize = 10,mPageCount = 1;
+    public int mPageNo = 1, mPageSize = 10, mPageCount = 1;
 
     private boolean mIsFirstLoad = true;
 
     /**
      * 获取适配器
+     *
      * @return
      */
     protected abstract CommonAdapter<T> getAdapter();
@@ -59,7 +58,7 @@ public abstract class BaseListFragment<T> extends BaseFragment implements SwipeR
         //设置Item增加、移除动画
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         //添加分割线
-        mRecyclerView.addItemDecoration(new DividerItemDecoration(this.getActivity(), DividerItemDecoration.VERTICAL_LIST,5,getResources().getColor(android.R.color.white)));
+        mRecyclerView.addItemDecoration(new DividerItemDecoration(this.getActivity(), DividerItemDecoration.VERTICAL_LIST, 5, getResources().getColor(android.R.color.white)));
 
         swipeContainer.setColorSchemeResources(R.color.google_blue,
                 R.color.google_green,
@@ -71,17 +70,18 @@ public abstract class BaseListFragment<T> extends BaseFragment implements SwipeR
         return view;
     }
 
-    protected void init(){
+    protected void init() {
 
     }
 
     /**
      * 首次读取数据
+     *
      * @param isDelayed 是否延迟加载数据
      */
     public void firstloadData(boolean isDelayed) {
-        if(mIsFirstLoad){
-            if(isDelayed){
+        if (mIsFirstLoad) {
+            if (isDelayed) {
                 swipeContainer.postDelayed(new Runnable() {
                     @Override
                     public void run() {
@@ -89,7 +89,7 @@ public abstract class BaseListFragment<T> extends BaseFragment implements SwipeR
                         onRefresh();
                         mIsFirstLoad = false;
                     }
-                },1000);
+                }, 1000);
                 return;
             }
             swipeContainer.setRefreshing(true);
@@ -101,7 +101,7 @@ public abstract class BaseListFragment<T> extends BaseFragment implements SwipeR
     /**
      * 加载完成之后调用
      */
-    protected void refreshComplete(){
+    protected void refreshComplete() {
         swipeContainer.setRefreshing(false);
     }
 

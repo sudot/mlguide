@@ -1,7 +1,6 @@
 package com.mlxing.mlguide.adapter;
 
 import android.content.Context;
-
 import com.mlxing.mlguide.R;
 import com.mlxing.mlguide.adapter.base.ViewHolder;
 import com.mlxing.mlguide.adapter.base.recyclerview.CommonAdapter;
@@ -20,8 +19,8 @@ public class SceneListAdapter extends CommonAdapter<Scene> {
 
     @Override
     public void convert(ViewHolder holder, Scene item) {
-        holder.setImageByUrl(R.id.item_img,item.getListRightPic());
-        holder.setText(R.id.item_name,item.getName());
-        holder.setText(R.id.item_right,item.getCityName());
+        holder.setImageByUrl(R.id.item_img, item.getListRightPic());
+        holder.setText(R.id.item_name, item.getName());
+        holder.setText(R.id.item_right, item.getCityName());
     }
 }

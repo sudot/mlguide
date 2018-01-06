@@ -10,7 +10,6 @@ import android.widget.AbsListView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
 import com.mlxing.mlguide.R;
 
 /**
@@ -44,7 +43,7 @@ public class RefreshLayout extends SwipeRefreshLayout {
 
     public void setChildView(final ListView mListView) {
         this.mListView = mListView;
-        footerView = View.inflate(getContext(), R.layout.loading_layout,null);
+        footerView = View.inflate(getContext(), R.layout.loading_layout, null);
         this.mListView.addFooterView(footerView);
         textMore = (TextView) footerView.findViewById(R.id.tv_loading);
         progressBar = (ProgressBar) footerView.findViewById(R.id.progress_loading);
@@ -138,7 +137,7 @@ public class RefreshLayout extends SwipeRefreshLayout {
         }
     }
 
-    public void onComplete(){
+    public void onComplete() {
         setRefreshing(false);
         setLoading(false);
     }

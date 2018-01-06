@@ -3,19 +3,16 @@ package com.mlxing.mlguide.adapter.base.abslistview;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.mlxing.mlguide.adapter.base.ViewHolder;
 
 import java.util.List;
 
-public abstract class MultiItemCommonAdapter<T> extends CommonAdapter<T>
-{
+public abstract class MultiItemCommonAdapter<T> extends CommonAdapter<T> {
 
     protected MultiItemTypeSupport<T> mMultiItemTypeSupport;
 
     public MultiItemCommonAdapter(Context context, List<T> datas,
-                                  MultiItemTypeSupport<T> multiItemTypeSupport)
-    {
+                                  MultiItemTypeSupport<T> multiItemTypeSupport) {
         super(context, -1, datas);
         mMultiItemTypeSupport = multiItemTypeSupport;
         if (mMultiItemTypeSupport == null)
@@ -23,16 +20,14 @@ public abstract class MultiItemCommonAdapter<T> extends CommonAdapter<T>
     }
 
     @Override
-    public int getViewTypeCount()
-    {
+    public int getViewTypeCount() {
         if (mMultiItemTypeSupport != null)
             return mMultiItemTypeSupport.getViewTypeCount();
         return super.getViewTypeCount();
     }
 
     @Override
-    public int getItemViewType(int position)
-    {
+    public int getItemViewType(int position) {
         if (mMultiItemTypeSupport != null)
             return mMultiItemTypeSupport.getItemViewType(position,
                     mDatas.get(position));
@@ -41,8 +36,7 @@ public abstract class MultiItemCommonAdapter<T> extends CommonAdapter<T>
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent)
-    {
+    public View getView(int position, View convertView, ViewGroup parent) {
         if (mMultiItemTypeSupport == null)
             return super.getView(position, convertView, parent);
 

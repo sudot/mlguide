@@ -8,7 +8,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.widget.RelativeLayout;
-
 import com.lhh.apst.library.AdvancedPagerSlidingTabStrip;
 import com.lhh.apst.library.Margins;
 import com.mlxing.mlguide.R;
@@ -19,12 +18,12 @@ import com.mlxing.mlguide.R;
 public class FragmentAdapter extends FragmentStatePagerAdapter implements
         AdvancedPagerSlidingTabStrip.IconTabProvider,
         AdvancedPagerSlidingTabStrip.LayoutProvider,
-        AdvancedPagerSlidingTabStrip.TipsProvider{
+        AdvancedPagerSlidingTabStrip.TipsProvider {
 
-    public static final int VIEW_FIRST 		= 0;
-    public static final int VIEW_SECOND	    = 1;
-    public static final int VIEW_THIRD       = 2;
-    public static final int VIEW_FOURTH    = 3;
+    public static final int VIEW_FIRST = 0;
+    public static final int VIEW_SECOND = 1;
+    public static final int VIEW_THIRD = 2;
+    public static final int VIEW_FOURTH = 3;
     private FirstFragment mFirstFragment = null;
     private SecondFragment mSecondFragment = null;
     private ThirdFragment mThirdFragment = null;
@@ -36,7 +35,7 @@ public class FragmentAdapter extends FragmentStatePagerAdapter implements
 
     private Context context;
 
-    public FragmentAdapter(Context context,FragmentManager fm , int mSize) {
+    public FragmentAdapter(Context context, FragmentManager fm, int mSize) {
         super(fm);
         this.mSize = mSize;
         this.context = context;
@@ -44,25 +43,25 @@ public class FragmentAdapter extends FragmentStatePagerAdapter implements
 
     @Override
     public Fragment getItem(int position) {
-        if(position >= 0 && position < VIEW_SIZE){
-            switch (position){
-                case  VIEW_FIRST:
-                    if(null == mFirstFragment)
+        if (position >= 0 && position < VIEW_SIZE) {
+            switch (position) {
+                case VIEW_FIRST:
+                    if (null == mFirstFragment)
                         mFirstFragment = FirstFragment.instance();
                     return mFirstFragment;
 
                 case VIEW_SECOND:
-                    if(null == mSecondFragment)
+                    if (null == mSecondFragment)
                         mSecondFragment = SecondFragment.instance();
                     return mSecondFragment;
 
                 case VIEW_THIRD:
-                    if(null == mThirdFragment)
+                    if (null == mThirdFragment)
                         mThirdFragment = ThirdFragment.instance();
                     return mThirdFragment;
 
                 case VIEW_FOURTH:
-                    if(null == mFourthFragment)
+                    if (null == mFourthFragment)
                         mFourthFragment = FourthFragment.instance();
                     return mFourthFragment;
                 default:
@@ -79,16 +78,16 @@ public class FragmentAdapter extends FragmentStatePagerAdapter implements
 
     @Override
     public CharSequence getPageTitle(int position) {
-        if(position >= 0 && position < VIEW_SIZE){
-            switch (position){
-                case  VIEW_FIRST:
-                    return  "导游";
-                case  VIEW_SECOND:
-                    return  "动态";
-                case  VIEW_THIRD:
-                    return  "体验";
-                case  VIEW_FOURTH:
-                    return  "我的";
+        if (position >= 0 && position < VIEW_SIZE) {
+            switch (position) {
+                case VIEW_FIRST:
+                    return "导游";
+                case VIEW_SECOND:
+                    return "动态";
+                case VIEW_THIRD:
+                    return "体验";
+                case VIEW_FOURTH:
+                    return "我的";
                 default:
                     break;
             }
@@ -98,16 +97,16 @@ public class FragmentAdapter extends FragmentStatePagerAdapter implements
 
     @Override
     public float getPageWeight(int position) {
-        if(position >= 0 && position < VIEW_SIZE){
-            switch (position){
-                case  VIEW_FIRST:
-                    return  0.92f;
-                case  VIEW_SECOND:
-                    return  1.0f;
-                case  VIEW_THIRD:
-                    return  1.0f;
-                case  VIEW_FOURTH:
-                    return  0.92f;
+        if (position >= 0 && position < VIEW_SIZE) {
+            switch (position) {
+                case VIEW_FIRST:
+                    return 0.92f;
+                case VIEW_SECOND:
+                    return 1.0f;
+                case VIEW_THIRD:
+                    return 1.0f;
+                case VIEW_FOURTH:
+                    return 0.92f;
                 default:
                     break;
             }
@@ -117,19 +116,19 @@ public class FragmentAdapter extends FragmentStatePagerAdapter implements
 
     @Override
     public int[] getPageRule(int position) {
-        if(position >= 0 && position < VIEW_SIZE){
-            switch (position){
-                case  VIEW_FIRST:
-                    return  new int[]{
+        if (position >= 0 && position < VIEW_SIZE) {
+            switch (position) {
+                case VIEW_FIRST:
+                    return new int[]{
                             RelativeLayout.ALIGN_PARENT_LEFT};
-                case  VIEW_SECOND:
-                    return  new int[]{
+                case VIEW_SECOND:
+                    return new int[]{
                             RelativeLayout.ALIGN_PARENT_LEFT};
-                case  VIEW_THIRD:
-                    return  new int[]{
+                case VIEW_THIRD:
+                    return new int[]{
                             RelativeLayout.ALIGN_PARENT_RIGHT};
-                case  VIEW_FOURTH:
-                    return  new int[]{
+                case VIEW_FOURTH:
+                    return new int[]{
                             RelativeLayout.ALIGN_PARENT_RIGHT};
                 default:
                     break;
@@ -138,22 +137,22 @@ public class FragmentAdapter extends FragmentStatePagerAdapter implements
         return new int[0];
     }
 
-    private Resources getResources(){
+    private Resources getResources() {
         return context.getResources();
     }
 
     @Override
     public Margins getPageMargins(int position) {
-        if(position >= 0 && position < VIEW_SIZE){
-            switch (position){
-                case  VIEW_FIRST:
-                    return  new Margins(getResources().getDimensionPixelSize(R.dimen.home_bar_icon_margins),0,0,0);
+        if (position >= 0 && position < VIEW_SIZE) {
+            switch (position) {
+                case VIEW_FIRST:
+                    return new Margins(getResources().getDimensionPixelSize(R.dimen.home_bar_icon_margins), 0, 0, 0);
                 case VIEW_SECOND:
-                    return  null;
+                    return null;
                 case VIEW_THIRD:
-                    return  null;
+                    return null;
                 case VIEW_FOURTH:
-                    return  new Margins(0,0,getResources().getDimensionPixelSize(R.dimen.home_bar_icon_margins),0);
+                    return new Margins(0, 0, getResources().getDimensionPixelSize(R.dimen.home_bar_icon_margins), 0);
                 default:
                     break;
             }
@@ -163,16 +162,16 @@ public class FragmentAdapter extends FragmentStatePagerAdapter implements
 
     @Override
     public Integer getPageIcon(int index) {
-        if(index >= 0 && index < VIEW_SIZE){
-            switch (index){
-                case  VIEW_FIRST:
-                    return  R.drawable.ic_home_gray;
+        if (index >= 0 && index < VIEW_SIZE) {
+            switch (index) {
+                case VIEW_FIRST:
+                    return R.drawable.ic_home_gray;
                 case VIEW_SECOND:
-                    return  R.drawable.ic_supervisor_account_gray;
+                    return R.drawable.ic_supervisor_account_gray;
                 case VIEW_THIRD:
-                    return  R.drawable.ic_search_gray;
+                    return R.drawable.ic_search_gray;
                 case VIEW_FOURTH:
-                    return  R.drawable.ic_person_gray;
+                    return R.drawable.ic_person_gray;
                 default:
                     break;
             }
@@ -182,16 +181,16 @@ public class FragmentAdapter extends FragmentStatePagerAdapter implements
 
     @Override
     public Integer getPageSelectIcon(int index) {
-        if(index >= 0 && index < VIEW_SIZE){
-            switch (index){
-                case  VIEW_FIRST:
-                    return  R.drawable.ic_home_red;
+        if (index >= 0 && index < VIEW_SIZE) {
+            switch (index) {
+                case VIEW_FIRST:
+                    return R.drawable.ic_home_red;
                 case VIEW_SECOND:
-                    return  R.drawable.ic_supervisor_account_red;
+                    return R.drawable.ic_supervisor_account_red;
                 case VIEW_THIRD:
-                    return  R.drawable.ic_search_red;
+                    return R.drawable.ic_search_red;
                 case VIEW_FOURTH:
-                    return  R.drawable.ic_person_red;
+                    return R.drawable.ic_person_red;
                 default:
                     break;
             }
@@ -206,19 +205,19 @@ public class FragmentAdapter extends FragmentStatePagerAdapter implements
 
     @Override
     public int[] getTipsRule(int position) {
-        if(position >= 0 && position < VIEW_SIZE){
-            switch (position){
-                case  VIEW_FIRST:
-                    return  new int[]{
+        if (position >= 0 && position < VIEW_SIZE) {
+            switch (position) {
+                case VIEW_FIRST:
+                    return new int[]{
                             RelativeLayout.ALIGN_PARENT_LEFT};
-                case  VIEW_SECOND:
-                    return  new int[]{
+                case VIEW_SECOND:
+                    return new int[]{
                             RelativeLayout.ALIGN_PARENT_LEFT};
-                case  VIEW_THIRD:
-                    return  new int[]{
+                case VIEW_THIRD:
+                    return new int[]{
                             RelativeLayout.ALIGN_PARENT_RIGHT};
-                case  VIEW_FOURTH:
-                    return  new int[]{
+                case VIEW_FOURTH:
+                    return new int[]{
                             RelativeLayout.ALIGN_PARENT_RIGHT};
                 default:
                     break;
@@ -229,10 +228,10 @@ public class FragmentAdapter extends FragmentStatePagerAdapter implements
 
     @Override
     public Margins getTipsMargins(int position) {
-        if(position >= 0 && position < VIEW_SIZE){
-            switch (position){
+        if (position >= 0 && position < VIEW_SIZE) {
+            switch (position) {
                 case VIEW_FIRST:
-                    return new Margins(4 *getResources().getDimensionPixelSize(R.dimen.psts_dot_m_right), 0, 0, 0);
+                    return new Margins(4 * getResources().getDimensionPixelSize(R.dimen.psts_dot_m_right), 0, 0, 0);
                 default:
                     break;
             }

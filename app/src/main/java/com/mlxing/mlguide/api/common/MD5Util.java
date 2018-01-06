@@ -9,24 +9,22 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 /**
- * 
  * 使用java.security.MessageDigest类写的一个工具类用来获取MD5码
- * 
+ *
  * @author Talen
- * 
  * @see java.security.MessageDigest
  */
 
 public class MD5Util {
 
     /**
-     * 
      * 默认的密码字符串组合，apache校验下载的文件的正确性用的就是默认的这个组合
      */
     protected static char hexDigits[] =
-                    {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
+            {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
 
     protected static MessageDigest messagedigest = null;
+
     static {
         try {
             messagedigest = MessageDigest.getInstance("MD5");
@@ -38,11 +36,9 @@ public class MD5Util {
     }
 
     /**
-     * 
      * 向getMD5方法传入一个你需要转换的原始字符串，将返回字符串的MD5码
-     * 
+     *
      * @param code 原始字符串
-     * 
      * @return 返回字符串的MD5码
      */
 
@@ -51,7 +47,7 @@ public class MD5Util {
         byte[] bytes = code.getBytes();
         byte[] results = messageDigest.digest(bytes);
         StringBuilder stringBuilder = new StringBuilder();
-        for (byte result: results) {
+        for (byte result : results) {
             // 将byte数组转化为16进制字符存入stringbuilder中
             stringBuilder.append(String.format("%02x", result));
         }
@@ -59,18 +55,15 @@ public class MD5Util {
     }
 
     /**
-     * 
      * 适用于上G大的文件
-     * 
+     *
      * @param file
-     * 
      * @return
-     * 
      * @throws IOException
      */
 
     @SuppressWarnings("resource")
-	public static String getFileMD5String(File file) throws IOException {
+    public static String getFileMD5String(File file) throws IOException {
         FileInputStream in = new FileInputStream(file);
         FileChannel ch = in.getChannel();
         MappedByteBuffer byteBuffer = ch.map(FileChannel.MapMode.READ_ONLY, 0, file.length());
@@ -119,7 +112,6 @@ public class MD5Util {
     /** */
 
     /**
-     * 
      * main方法用于测试
      */
 

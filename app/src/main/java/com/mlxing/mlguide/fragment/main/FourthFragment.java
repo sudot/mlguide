@@ -2,7 +2,6 @@ package com.mlxing.mlguide.fragment.main;
 
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.mlxing.mlguide.adapter.SceneListPageAdapter;
 import com.mlxing.mlguide.adapter.base.recyclerview.CommonAdapter;
 import com.mlxing.mlguide.api.ScenicService;
@@ -11,10 +10,9 @@ import com.mlxing.mlguide.api.base.ClientJsonResp;
 import com.mlxing.mlguide.entity.Scene;
 import com.mlxing.mlguide.fragment.BaseListPageFragment;
 import com.mlxing.mlguide.utils.UIHelp;
+import okhttp3.Call;
 
 import java.util.List;
-
-import okhttp3.Call;
 
 /**
  * Created by linhonghong on 2015/8/11.

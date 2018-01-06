@@ -2,7 +2,6 @@ package com.mlxing.mlguide.fragment.main;
 
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.mlxing.mlguide.adapter.SceneListAdapter;
 import com.mlxing.mlguide.adapter.base.recyclerview.CommonAdapter;
 import com.mlxing.mlguide.api.ScenicService;
@@ -11,20 +10,19 @@ import com.mlxing.mlguide.api.base.ClientJsonResp;
 import com.mlxing.mlguide.entity.Scene;
 import com.mlxing.mlguide.fragment.BaseListFragment;
 import com.mlxing.mlguide.utils.UIHelp;
+import okhttp3.Call;
 
 import java.util.List;
-
-import okhttp3.Call;
 
 /**
  * Created by linhonghong on 2015/8/11.
  */
-public class FirstFragment extends BaseListFragment<Scene>{
+public class FirstFragment extends BaseListFragment<Scene> {
 
     public static FirstFragment instance() {
         FirstFragment view = new FirstFragment();
-		return view;
-	}
+        return view;
+    }
 
     @Override
     protected CommonAdapter<Scene> getAdapter() {
@@ -35,7 +33,7 @@ public class FirstFragment extends BaseListFragment<Scene>{
     public void onItemClick(ViewGroup parent, View view, Object o, int position) {
         String ad_url = "http://www.zttmall.com/Wapshop/Topic.aspx?TopicId=18";
         String title = "百度一下你就知道";
-        UIHelp.showWebViewActivity(getActivity(),title,ad_url);
+        UIHelp.showWebViewActivity(getActivity(), title, ad_url);
     }
 
     @Override
@@ -44,8 +42,8 @@ public class FirstFragment extends BaseListFragment<Scene>{
     }
 
     @Override
-    public void loadData(){
-        ScenicService.loadData("广州",null,null,mPageNo,mPageSize).execute(new BeanCallBack<ClientJsonResp<List<Scene>>>() {
+    public void loadData() {
+        ScenicService.loadData("广州", null, null, mPageNo, mPageSize).execute(new BeanCallBack<ClientJsonResp<List<Scene>>>() {
 
             @Override
             public void onError(Call call, Exception e, int id) {

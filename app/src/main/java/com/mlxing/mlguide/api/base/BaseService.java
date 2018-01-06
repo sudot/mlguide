@@ -48,10 +48,10 @@ public class BaseService {
      */
     public static final int API_RESPONSE_OK = 0;
 
-    public static RequestCall post(String url, ParamUtil paramUtil){
-       Map<String,String> map = paramUtil.getResultParamsMap();
+    public static RequestCall post(String url, ParamUtil paramUtil) {
+        Map<String, String> map = paramUtil.getResultParamsMap();
         PostFormBuilder builder = OkHttpUtils.post().url(url);
-        for (Map.Entry<String,String> entry : map.entrySet()) {
+        for (Map.Entry<String, String> entry : map.entrySet()) {
             builder.addParams(entry.getKey(), entry.getValue());
         }
         return builder.build();

@@ -2,7 +2,6 @@ package com.mlxing.mlguide.adapter.base.recyclerview;
 
 import android.content.Context;
 import android.view.ViewGroup;
-
 import com.mlxing.mlguide.R;
 import com.mlxing.mlguide.adapter.base.ViewHolder;
 
@@ -18,8 +17,8 @@ public abstract class LoadMoreCommonAdapter<T> extends CommonAdapter<T> {
 
     protected static final int FOOTER_LAYOUT_ID = R.layout.loading_layout;
 
-    public LoadMoreCommonAdapter(Context context,int layoutId, List<T> mDatas) {
-        super(context,layoutId,mDatas);
+    public LoadMoreCommonAdapter(Context context, int layoutId, List<T> mDatas) {
+        super(context, layoutId, mDatas);
     }
 
     /**
@@ -27,6 +26,7 @@ public abstract class LoadMoreCommonAdapter<T> extends CommonAdapter<T> {
      * null 作为是上拉的 progressBar 的标记
      * http://android-pratap.blogspot.com/2015/06/endless-recyclerview-with-progress-bar.html
      * 参看这篇文章
+     *
      * @param position
      * @return
      */
@@ -41,13 +41,13 @@ public abstract class LoadMoreCommonAdapter<T> extends CommonAdapter<T> {
     }
 
     @Override
-    public ViewHolder onCreateViewHolder(final ViewGroup parent, int viewType){
+    public ViewHolder onCreateViewHolder(final ViewGroup parent, int viewType) {
         if (viewType == TYPE_ITEM) {
             ViewHolder viewHolder = ViewHolder.get(mContext, null, parent, mLayoutId, -1);
             setListener(parent, viewHolder, viewType);
             return viewHolder;
         } else if (viewType == TYPE_FOOTER) {
-            ViewHolder viewHolder = ViewHolder.get(mContext, null, parent, FOOTER_LAYOUT_ID , -1);
+            ViewHolder viewHolder = ViewHolder.get(mContext, null, parent, FOOTER_LAYOUT_ID, -1);
             return viewHolder;
         }
         return null;
@@ -58,7 +58,7 @@ public abstract class LoadMoreCommonAdapter<T> extends CommonAdapter<T> {
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.updatePosition(position);
         //这时候 T is null，先把 footer 处理了
-        if (holder.getLayoutId() ==  FOOTER_LAYOUT_ID) {
+        if (holder.getLayoutId() == FOOTER_LAYOUT_ID) {
             return;
         }
         convert(holder, mDatas.get(position));
@@ -68,18 +68,18 @@ public abstract class LoadMoreCommonAdapter<T> extends CommonAdapter<T> {
      * 加载更多操作前调用,配合 #addData(List<T> mDatas)
      * 主要是显示loadMore 的footerView
      */
-    public void prevLoadMoreData(){
+    public void prevLoadMoreData() {
         this.mDatas.add(null);
         notifyItemInserted(this.mDatas.size() - 1);
     }
 
     @Override
-    public void addData(List<T> mData){
-        if(mData == null || mData.isEmpty()){
+    public void addData(List<T> mData) {
+        if (mData == null || mData.isEmpty()) {
             return;
         }
         //删除 footer
-        if(this.mDatas.size()  > 0) {
+        if (this.mDatas.size() > 0) {
             this.mDatas.remove(this.mDatas.size() - 1);
         }
         this.mDatas.addAll(mData);
