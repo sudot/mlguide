@@ -2,9 +2,6 @@
 .gradle
 local.properties
 .idea
-!.idea/gradle.xml
-!.idea/modules.xml
-!.idea/vcs.xml
 .DS_Store
 build
 captures
